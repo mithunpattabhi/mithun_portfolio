@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Mithun Pattabhi — Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div id="splash" class="splash" aria-hidden="false">
+    <div class="splash-inner">
+      <div class="splash-logo">
+        <div id="typing" class="typing" aria-live="polite"></div>
+        <div class="loader" aria-hidden="true"></div>
+      </div>
+      <div class="splash-sub">Loading portfolio…</div>
+    </div>
+  </div>
+
+  <main id="site" class="site hidden" role="main">
+    <header class="site-header container">
+      <div class="header-left">
+        <h1 class="name">Mithun Pattabhi</h1>
+        <div class="tag">AI/ML • TensorFlow • PyTorch • ML Deployment</div>
+      </div>
+      <nav class="nav" aria-label="Main navigation">
+        <a href="#info">My Info</a>
+        <a href="#projects">Projects</a>
+        <a href="#Mithun_AIML_Resume">Resume</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <section id="info" class="section container info">
+      <div class="info-grid">
+        <div class="photo">
+         <img src="profile.jpeg" alt="Mithun Pattabhi" class="profile-pic" height="150px" width="150px" />
+        </div>
+        <div class="bio">
+          <p class="lead">Third-year AI/ML undergraduate passionate about building and optimizing intelligent systems for real-world impact. Experienced in deep learning, model deployment, and data-driven problem solving.</p>
+
+          <h4>Skills</h4>
+          <div class="chips">
+            <span>Python</span><span>Java</span><span>TensorFlow</span><span>PyTorch</span><span>scikit-learn</span><span>NumPy</span><span>Pandas</span><span>Flask</span><span>SQL</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" class="section container projects">
+      <h2>My Projects</h2>
+
+      <div class="grid">
+        <article class="card">
+          <img src="logistic_project.png" alt="Land Price" class="profile-pic" height="150px" width="300px" />
+          <h3>Logistic Regression From Scratch</h3>
+          <p class="small">NumPy implementation of logistic regression with gradient descent and comparison to scikit-learn.</p>
+          <div class="meta">Python • NumPy • Matplotlib</div>
+          <a class="link" href="https://github.com/mithunpattabhi/Logistic_Regression_Project" target="_blank" rel="noopener">Repo →</a>
+        </article>
+
+        <article class="card">
+          <img src="price_project.png" alt="Land Price" class="profile-pic" height="150px" width="300px" />
+          <h3>Bangalore Land Price Prediction</h3>
+          <p class="small">Flask web app predicting price per sq.ft. with trend visualizations.</p>
+          <div class="meta">Python • Flask • scikit-learn • Pandas</div>
+          <a class="link" href="https://github.com/mithunpattabhi/Bangalore_Land_Prediction_Project" target="_blank" rel="noopener">Repo →</a>
+        </article>
+
+        <article class="card">
+          <img src="translation_project.png" alt="Land Price" class="profile-pic" height="150px" width="300px" />
+          <h3>Offline Translation Software</h3>
+          <p class="small">Offline NMT translator optimized for Indian languages and edge devices.</p>
+          <div class="meta">NMT • ONNX • NLP</div>
+          <a class="link" href="https://github.com/mithunpattabhi/Translation_software" target="_blank" rel="noopener">Repo →</a>
+        </article>
+
+        <article class="card">
+          <img src="laptop_project.png" alt="Land Price" class="profile-pic" height="150px" width="300px" />
+          <h3>Laptop Health Diagnostic Tool</h3>
+          <p class="small">Random Forest-based tool analyzing HWInfo CSVs and generating PDF diagnostics.</p>
+          <div class="meta">Python • Flask • Random Forest</div>
+          <a class="link" href="https://simple-laptop-health-diagnostics.onrender.com/" target="_blank" rel="noopener">Live Demo →</a>
+        </article>
+
+        <article class="card">
+          <img src="heart_attack.png" alt="Land Price" class="profile-pic" height="150px" width="300px" />
+          <h3>Heart Attack Risk Prediction</h3>
+          <p class="small">Deep-learning models comparing region-specific diets; improved model with BN + dropout.</p>
+          <div class="meta">PyTorch • Deep Learning</div>
+          <a class="link" href="https://github.com/mithunpattabhi/Heart-Attack-Risk-Prediction-Deep-Learning" target="_blank" rel="noopener">Repo →</a>
+        </article>
+      </div>
+    </section>
+
+    <section id="Mithun_AIML_Resume" class="section container resume">
+      <h2>Resume</h2>
+      <p class="muted">Click the button below to view my resume.</p>
+
+      <div class="auth-area">
+        <button id="viewResumeBtn" class="btn green">View Resume</button>
+        <a id="openInNewTab" class="btn ghost" href="#" target="_blank" rel="noopener" style="display:none;">Open in new tab</a>
+      </div>
+    </section>
+
+    <section id="contact" class="section container contact">
+      <h2>Contact</h2>
+      <p>Email: <a href="mailto:mithunpattabhi004@gmail.com">mithunpattabhi004@gmail.com</a></p>
+    </section>
+
+    <footer class="footer">© Mithun Pattabhi — Built with HTML, CSS & JS</footer>
+  </main>
+
+  <div id="resumeModal" class="modal" aria-hidden="true" role="dialog" aria-label="Resume viewer">
+    <div class="modal-backdrop" id="modalBackdrop"></div>
+    <div class="modal-content" role="document">
+      <button class="modal-close" id="modalClose" aria-label="Close resume viewer">✕</button>
+      <iframe id="resumeIframe" src="" frameborder="0" title="Resume viewer"></iframe>
+      <div class="modal-footer">
+        <a id="modalOpenNew" href="#" target="_blank" rel="noopener" class="btn ghost">Open in new tab</a>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
