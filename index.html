@@ -1,128 +1,310 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Mithun Pattabhi — Portfolio</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mithun Pattabhi | AI/ML Portfolio</title>
+  <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
 
-  <div id="splash" class="splash" aria-hidden="false">
-    <div class="splash-inner">
-      <div class="splash-logo">
-        <div id="typing" class="typing" aria-live="polite"></div>
-        <div class="loader" aria-hidden="true"></div>
-      </div>
-      <div class="splash-sub">Loading portfolio…</div>
-    </div>
+
+<div id="intro" class="intro">
+  <div class="intro-content">
+    <div id="introText" class="intro-text"></div>
+    <div class="intro-bar"></div>
   </div>
+</div>
 
-  <main id="site" class="site hidden" role="main">
-    <header class="site-header container">
-      <div class="header-left">
-        <h1 class="name">Mithun Pattabhi</h1>
-        <div class="tag">AI/ML • TensorFlow • PyTorch • ML Deployment</div>
-      </div>
-      <nav class="nav" aria-label="Main navigation">
-        <a href="#info">My Info</a>
-        <a href="#projects">Projects</a>
-        <a href="#Mithun_AIML_Resume">Resume</a>
-        <a href="#contact">Contact</a>
-      </nav>
-    </header>
+<div class="bg-glow glow-1"></div>
+<div class="bg-glow glow-2"></div>
 
-    <section id="info" class="section container info">
-      <div class="info-grid">
-        <div class="photo">
-         <img src="profile.jpeg" alt="Mithun Pattabhi" class="profile-pic" height="150px" width="150px" />
-        </div>
-        <div class="bio">
-          <p class="lead">Third-year AI/ML undergraduate passionate about building and optimizing intelligent systems for real-world impact. Experienced in deep learning, model deployment, and data-driven problem solving.</p>
+<section class="hero reveal">
+  <h1 class="gradient-text">Mithun Pattabhi</h1>
+  <p class="hero-tag">AI / ML • Deep Learning • Deployment</p>
+  <p class="hero-desc">
+    I build end-to-end machine learning systems — from messy real-world data
+    to trained models and deployed applications.
+  </p>
+</section>
 
-          <h4>Skills</h4>
-          <div class="chips">
-            <span>Python</span><span>Java</span><span>TensorFlow</span><span>PyTorch</span><span>scikit-learn</span><span>NumPy</span><span>Pandas</span><span>Flask</span><span>SQL</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="projects" class="section container projects">
-      <h2>My Projects</h2>
-
-      <div class="grid">
-        <article class="card">
-          <img src="logistic_project.png" alt="Land Price" class="profile-pic" height="150px" width="300px" />
-          <h3>Logistic Regression From Scratch</h3>
-          <p class="small">NumPy implementation of logistic regression with gradient descent and comparison to scikit-learn.</p>
-          <div class="meta">Python • NumPy • Matplotlib</div>
-          <a class="link" href="https://github.com/mithunpattabhi/Logistic_Regression_Project" target="_blank" rel="noopener">Repo →</a>
-        </article>
-
-        <article class="card">
-          <img src="price_project.png" alt="Land Price" class="profile-pic" height="150px" width="300px" />
-          <h3>Bangalore Land Price Prediction</h3>
-          <p class="small">Flask web app predicting price per sq.ft. with trend visualizations.</p>
-          <div class="meta">Python • Flask • scikit-learn • Pandas</div>
-          <a class="link" href="https://github.com/mithunpattabhi/Bangalore_Land_Prediction_Project" target="_blank" rel="noopener">Repo →</a>
-        </article>
-
-        <article class="card">
-          <img src="translation_project.png" alt="Land Price" class="profile-pic" height="150px" width="300px" />
-          <h3>Offline Translation Software</h3>
-          <p class="small">Offline NMT translator optimized for Indian languages and edge devices.</p>
-          <div class="meta">NMT • ONNX • NLP</div>
-          <a class="link" href="https://github.com/mithunpattabhi/Translation_software" target="_blank" rel="noopener">Repo →</a>
-        </article>
-
-        <article class="card">
-          <img src="laptop_project.png" alt="Land Price" class="profile-pic" height="150px" width="300px" />
-          <h3>Laptop Health Diagnostic Tool</h3>
-          <p class="small">Random Forest-based tool analyzing HWInfo CSVs and generating PDF diagnostics.</p>
-          <div class="meta">Python • Flask • Random Forest</div>
-          <a class="link" href="https://simple-laptop-health-diagnostics.onrender.com/" target="_blank" rel="noopener">Live Demo →</a>
-        </article>
-
-        <article class="card">
-          <img src="heart_attack.png" alt="Land Price" class="profile-pic" height="150px" width="300px" />
-          <h3>Heart Attack Risk Prediction</h3>
-          <p class="small">Deep-learning models comparing region-specific diets; improved model with BN + dropout.</p>
-          <div class="meta">PyTorch • Deep Learning</div>
-          <a class="link" href="https://github.com/mithunpattabhi/Heart-Attack-Risk-Prediction-Deep-Learning" target="_blank" rel="noopener">Repo →</a>
-        </article>
-      </div>
-    </section>
-
-    <section id="Mithun_AIML_Resume" class="section container resume">
-      <h2>Resume</h2>
-      <p class="muted">Click the button below to view my resume.</p>
-
-      <div class="auth-area">
-        <button id="viewResumeBtn" class="btn green">View Resume</button>
-        <a id="openInNewTab" class="btn ghost" href="#" target="_blank" rel="noopener" style="display:none;">Open in new tab</a>
-      </div>
-    </section>
-
-    <section id="contact" class="section container contact">
-      <h2>Contact</h2>
-      <p>Email: <a href="mailto:mithunpattabhi004@gmail.com">mithunpattabhi004@gmail.com</a></p>
-    </section>
-
-    <footer class="footer">© Mithun Pattabhi — Built with HTML, CSS & JS</footer>
-  </main>
-
-  <div id="resumeModal" class="modal" aria-hidden="true" role="dialog" aria-label="Resume viewer">
-    <div class="modal-backdrop" id="modalBackdrop"></div>
-    <div class="modal-content" role="document">
-      <button class="modal-close" id="modalClose" aria-label="Close resume viewer">✕</button>
-      <iframe id="resumeIframe" src="" frameborder="0" title="Resume viewer"></iframe>
-      <div class="modal-footer">
-        <a id="modalOpenNew" href="#" target="_blank" rel="noopener" class="btn ghost">Open in new tab</a>
+<section class="section reveal">
+  <div class="about-card">
+    <img src="profile.jpeg" alt="Mithun Pattabhi" />
+    <div>
+      <h2>About Me</h2>
+      <p>
+        I’m an AI/ML undergraduate who enjoys working on problems where the challenge isn’t just training a model, but understanding why it fails and how to fix it.
+        Many of my projects focus on building systems end-to-end — creating datasets from scratch, debugging model collapse and bias, experimenting with architectures, and finally deploying models into usable applications.
+        I’ve worked on projects ranging from deep learning–based video game screenshot classification to offline translation systems and real-world ML web apps. I’m particularly interested in model behavior, data quality, and making machine learning systems reliable outside of notebooks.
+      </p>
+      <div class="skills">
+        <span>Python</span><span>Java</span><span>TensorFlow</span><span>PyTorch</span>
+        <span>scikit-learn</span><span>OpenCV</span>
+        <span>Flask</span><span>NumPy</span><span>Pandas</span><span>Matplotlib</span><span>Streamlit</span>
       </div>
     </div>
   </div>
+</section>
 
-  <script src="script.js"></script>
+<section id="projects" class="section reveal">
+  <h2 class="section-title">Projects</h2>
+
+  <div class="featured reveal">
+    <div>
+      <span class="chip">Latest Project</span>
+      <h3>🎮 Video Game Screenshot Classification</h3>
+      <p>
+        Deep learning system that classifies which video game a screenshot
+        belongs to, using a dataset built completely from scratch.
+      </p>
+      <ul>
+        <li>Dataset built from YouTube gameplay videos</li>
+        <li>EfficientNetB0 with transfer learning</li>
+        <li>Resolved class collapse & bias issues</li>
+        <li>Deployed using Streamlit</li>
+      </ul>
+      <a href="https://video-game-identification.streamlit.app/"
+         target="_blank" class="btn primary">Live Demo →</a>
+    </div>
+    <img src="game_project.png" />
+  </div>
+
+ 
+  <div class="project-grid">
+
+   
+    <div class="project-card reveal">
+      <img src="logistic_project.png" />
+      <h4>Logistic Regression From Scratch</h4>
+      <p>Implemented logistic regression manually using NumPy.</p>
+      <button class="toggle-btn">Read more ↓</button>
+
+      <div class="project-details">
+        <h5>Objective</h5>
+        <p>
+          Understand the mathematics behind logistic regression by implementing
+          the algorithm from scratch without using scikit-learn’s training APIs.
+        </p>
+
+        <h5>Key Features</h5>
+        <ul>
+          <li>Manual sigmoid, loss, and gradient derivation</li>
+          <li>Gradient descent optimization</li>
+          <li>Training loss curve visualization</li>
+          <li>Comparison with scikit-learn LogisticRegression</li>
+        </ul>
+
+        <h5>Learnings</h5>
+        <ul>
+          <li>Importance of feature scaling</li>
+          <li>How sklearn abstracts complex math</li>
+          <li>Better intuition for model convergence</li>
+        </ul>
+
+        <a href="https://github.com/mithunpattabhi/Logistic_Regression_Project"
+           target="_blank">View GitHub Repo →</a>
+      </div>
+    </div>
+
+    
+    <div class="project-card reveal">
+      <img src="price_project.png" />
+      <h4>Bangalore Land Price Prediction</h4>
+      <p>ML-based Flask web app for land price prediction.</p>
+      <button class="toggle-btn">Read more ↓</button>
+
+      <div class="project-details">
+        <h5>Objective</h5>
+        <p>
+          Predict land price per square foot in Bangalore using real-world
+          features like locality, year, land type, and amenities.
+        </p>
+
+        <h5>Key Features</h5>
+        <ul>
+          <li>User input for key attributes</li>
+          <li>Default values for secondary features</li>
+          <li>Trend visualization over years</li>
+          <li>Flask-based interactive UI</li>
+        </ul>
+
+        <h5>Learnings</h5>
+        <ul>
+          <li>Feature engineering importance</li>
+          <li>Pipeline-based ML workflows</li>
+          <li>Deploying ML models as web apps</li>
+        </ul>
+
+        <a href="https://github.com/mithunpattabhi/Bangalore_Land_Prediction_Project"
+           target="_blank">View GitHub Repo →</a>
+      </div>
+    </div>
+
+   
+    <div class="project-card reveal">
+      <img src="translation_project.png" />
+      <h4>Offline Translation Software</h4>
+      <p>Offline NMT system for Indian regional languages.</p>
+      <button class="toggle-btn">Read more ↓</button>
+
+      <div class="project-details">
+        <h5>Objective</h5>
+        <p>
+          Break language barriers by developing an offline AI-powered translation
+          system optimized for Indian regional languages.
+        </p>
+
+        <h5>Key Features</h5>
+        <ul>
+          <li>Neural Machine Translation models</li>
+          <li>Context-aware translations</li>
+          <li>Works without internet connectivity</li>
+          <li>Cultural and linguistic accuracy</li>
+        </ul>
+
+        <h5>Learnings</h5>
+        <ul>
+          <li>Challenges in multilingual NLP</li>
+          <li>Importance of preprocessing & tokenization</li>
+          <li>Edge-optimized AI systems</li>
+        </ul>
+
+        <a href="https://github.com/mithunpattabhi/Translation_software"
+           target="_blank">View GitHub Repo →</a>
+      </div>
+    </div>
+
+    <div class="project-card reveal">
+  <img src="heart_attack.png" alt="Heart Attack Risk Prediction" />
+  <h4>Heart Attack Risk Prediction (Deep Learning)</h4>
+  <p>
+    Comparative deep learning study analyzing heart-attack risk across
+    Indian and Western dietary patterns.
+  </p>
+
+  <button class="toggle-btn">Read more ↓</button>
+
+  <div class="project-details">
+    <h5>Objective</h5>
+    <p>
+      Predict heart-attack risk using health indicators combined with
+      region-specific dietary patterns, and compare model behavior across
+      Indian and Western datasets.
+    </p>
+
+    <h5>Methodology</h5>
+    <ul>
+      <li>Two custom datasets: Indian & Western food-integrated</li>
+      <li>Baseline deep neural network (4 hidden layers)</li>
+      <li>Improved model with BatchNorm, Dropout & LR scheduler</li>
+    </ul>
+
+    <h5>Key Results</h5>
+    <ul>
+      <li>Indian dataset accuracy improved to ~91.8%</li>
+      <li>ROC-AUC increased to 0.95 in improved model</li>
+      <li>Better stability and smoother loss curves</li>
+    </ul>
+
+    <h5>Learnings</h5>
+    <ul>
+      <li>Accuracy alone can be misleading</li>
+      <li>Importance of confusion matrix & ROC-AUC</li>
+      <li>Careful regularization improves generalization</li>
+    </ul>
+
+    <a href="https://github.com/mithunpattabhi/Heart-Attack-Risk-Prediction-Deep-Learning"
+       target="_blank">
+      View GitHub Repo →
+    </a>
+  </div>
+</div>
+
+    <div class="project-card reveal">
+      <img src="laptop_project.png" />
+      <h4>Laptop Health Diagnostic Tool</h4>
+      <p>ML-based system for laptop health analysis.</p>
+      <button class="toggle-btn">Read more ↓</button>
+
+      <div class="project-details">
+        <h5>Objective</h5>
+        <p>
+          Analyze laptop performance using HWInfo CSV files and predict
+          health status using machine learning.
+        </p>
+
+        <h5>Key Features</h5>
+        <ul>
+          <li>CSV upload and metric extraction</li>
+          <li>Random Forest classifier</li>
+          <li>PDF report generation with graphs</li>
+          <li>User-friendly web interface</li>
+        </ul>
+
+        <h5>Learnings</h5>
+        <ul>
+          <li>Handling noisy real-world data</li>
+          <li>Importance of interpretability</li>
+          <li>Building end-to-end ML products</li>
+        </ul>
+
+        <a href="https://simple-laptop-health-diagnostics.onrender.com/"
+           target="_blank">View Live Demo →</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="section reveal">
+  <div class="resume-card enhanced">
+    <h2>Resume</h2>
+    <p>
+      A concise overview of my academic background, technical skills,
+      and project experience.
+    </p>
+
+    <button onclick="window.open('Mithun_AIML_Resume.pdf')">
+      View Resume →
+    </button>
+  </div>
+</section>
+
+
+<section id="contact" class="section reveal">
+  <h2 class="section-title">Contact Me</h2>
+
+  <div class="contact-card">
+    <form action="https://formspree.io/f/xykzrplv" method="POST">
+
+      <input type="text" name="name" placeholder="Your Name" required />
+
+      <input type="email" name="email" placeholder="Your Email" required />
+
+      <textarea name="message"
+        placeholder="Your message (internships, questions…)"></textarea>
+
+      <button type="submit">Send Message</button>
+    </form>
+
+    <div class="contact-info">
+      <h4>Direct Contact</h4>
+      <p>Email</p>
+      <a href="mailto:mithunpattabhi004@gmail.com">
+        mithunpattabhi004@gmail.com
+      </a>
+
+      <p style="margin-top:14px;">GitHub</p>
+      <a href="https://github.com/mithunpattabhi" target="_blank">
+        github.com/mithunpattabhi
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>© Mithun Pattabhi</footer>
+
+<script src="script.js"></script>
 </body>
 </html>

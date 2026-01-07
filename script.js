@@ -1,112 +1,53 @@
+document.addEventListener("DOMContentLoaded", () => {
 
-const RESUME_URL = "./Mithun_AIML_Resume.pdf";
+  const intro = document.getElementById("intro");
+  const introText = document.getElementById("introText");
 
-const typingEl = document.getElementById("typing");
-const splashEl = document.getElementById("splash");
-const siteEl = document.getElementById("site");
+  const nameText = "MITHUN PATTABHI";
+  const regText = "23BCE8347";
 
-const nameFull = "MITHUN PATTABHI";
-const code = "23BCE8347";
+  const wait = ms => new Promise(r => setTimeout(r, ms));
 
-function wait(ms){ return new Promise(r => setTimeout(r, ms)); }
-
-async function typeAndMorph() {
-  for (let i = 1; i <= nameFull.length; i++) {
-    typingEl.textContent = nameFull.slice(0, i);
-    await wait(80);
-  }
-  await wait(600);
-  for (let k = 1; k <= code.length; k++) {
-    typingEl.textContent = code.slice(0, k);
-    await wait(110);
-  }
-  await wait(400);
-  hideSplash();
-}
-
-function hideSplash(){
-  splashEl.style.opacity = "0";
-  splashEl.style.transform = "translateY(-6px)";
-  setTimeout(()=>{
-    splashEl.style.display = "none";
-    siteEl.classList.remove("hidden");
-  }, 520);
-}
-
-window.addEventListener("load", () => {
-  siteEl.classList.add("hidden");
-  typeAndMorph().catch(()=> hideSplash());
-});
-
-const viewResumeBtn = document.getElementById("viewResumeBtn");
-const resumeModal = document.getElementById("resumeModal");
-const resumeIframe = document.getElementById("resumeIframe");
-const modalBackdrop = document.getElementById("modalBackdrop");
-const modalClose = document.getElementById("modalClose");
-const modalOpenNew = document.getElementById("modalOpenNew");
-const openInNewTab = document.getElementById("openInNewTab");
-
-function tryEmbedDirect(publicUrl){
-  resumeIframe.src = publicUrl;
-  resumeModal.setAttribute("aria-hidden","false");
-  modalOpenNew.href = publicUrl;
-  openInNewTab.href = publicUrl;
-  openInNewTab.style.display = "inline-block";
-
-  let loaded = false;
-
-  const onLoad = () => { loaded = true; resumeIframe.removeEventListener('load', onLoad); clearTimeout(timeout); };
-  resumeIframe.addEventListener('load', onLoad);
-
-  const timeout = setTimeout(() => {
-    resumeIframe.removeEventListener('load', onLoad);
-    if (!loaded) {
-      tryGoogleViewer(publicUrl);
+  async function typeText(text, speed) {
+    introText.textContent = "";
+    for (let c of text) {
+      introText.textContent += c;
+      await wait(speed);
     }
-  }, 1800); 
-}
+  }
 
-function tryGoogleViewer(publicUrl){
-  const viewer = `https://docs.google.com/viewer?url=${encodeURIComponent(publicUrl)}&embedded=true`;
-  resumeIframe.src = viewer;
-  modalOpenNew.href = publicUrl;
-  openInNewTab.href = publicUrl;
-  openInNewTab.style.display = "inline-block";
+  async function startIntro() {
+    await typeText(nameText, 90);
+    await wait(600);
 
-  let googleLoaded = false;
-  const onLoad = () => { googleLoaded = true; resumeIframe.removeEventListener('load', onLoad); clearTimeout(gtimeout); };
-  resumeIframe.addEventListener('load', onLoad);
-
-  const gtimeout = setTimeout(() => {
-    resumeIframe.removeEventListener('load', onLoad);
-    if (!googleLoaded) {
-      window.open(publicUrl, "_blank");
-      closeResumeModal();
+    for (let i = 0; i < regText.length; i++) {
+      introText.textContent = regText.slice(0, i + 1);
+      await wait(120);
     }
-  }, 2200);
-}
 
-function openResumeModal(publicUrl){
-  resumeIframe.src = "about:blank";
-  tryEmbedDirect(publicUrl);
-}
+    await wait(700);
+    intro.style.opacity = "0";
+    setTimeout(() => intro.remove(), 600);
+  }
 
-function closeResumeModal(){
-  resumeIframe.src = "";
-  resumeModal.setAttribute("aria-hidden","true");
-}
+  startIntro();
 
-viewResumeBtn.addEventListener("click", () => {
-  openResumeModal(RESUME_URL);
-});
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) e.target.classList.add("show");
+    });
+  }, { threshold: 0.15 });
 
-modalBackdrop.addEventListener("click", closeResumeModal);
-modalClose.addEventListener("click", closeResumeModal);
-document.addEventListener("keydown", (e) => {
-  if (e.key === "Escape") closeResumeModal();
-});
+  document.querySelectorAll(".reveal").forEach(el => observer.observe(el));
 
-resumeIframe.addEventListener("error", () => {
-  window.open(RESUME_URL, "_blank");
-  closeResumeModal();
+  document.querySelectorAll(".toggle-btn").forEach(btn => {
+    btn.addEventListener("click", () => {
+      const card = btn.closest(".project-card");
+      card.classList.toggle("expanded");
+      btn.textContent = card.classList.contains("expanded")
+        ? "Read less ↑"
+        : "Read more ↓";
+    });
+  });
+
 });
