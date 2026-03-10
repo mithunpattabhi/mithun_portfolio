@@ -2,6 +2,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const intro = document.getElementById("intro");
   const introText = document.getElementById("introText");
+  const navbar = document.querySelector(".navbar");
 
   const nameText = "MITHUN PATTABHI";
   const regText = "23BCE8347";
@@ -27,10 +28,32 @@ document.addEventListener("DOMContentLoaded", () => {
 
     await wait(700);
     intro.style.opacity = "0";
+    intro.style.transition = "opacity 0.6s ease";
     setTimeout(() => intro.remove(), 600);
   }
 
   startIntro();
+
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 50) {
+      navbar.classList.add("scrolled");
+    } else {
+      navbar.classList.remove("scrolled");
+    }
+  });
+
+  document.querySelectorAll(".nav-link").forEach(link => {
+    link.addEventListener("click", (e) => {
+      const href = link.getAttribute("href");
+      if (href.startsWith("#")) {
+        e.preventDefault();
+        const element = document.querySelector(href);
+        if (element) {
+          element.scrollIntoView({ behavior: "smooth" });
+        }
+      }
+    });
+  });
 
   const observer = new IntersectionObserver(entries => {
     entries.forEach(e => {
@@ -51,3 +74,4 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
 });
+
